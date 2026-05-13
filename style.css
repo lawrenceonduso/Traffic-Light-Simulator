@@ -1,0 +1,64 @@
+body{
+    margin: 0;
+    height: 100vh;
+    background-color: linear-Gradient(rgb(23, 126, 37));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    text-align: center;
+}
+
+.traffic-light{
+    width: 100px;
+    height: 300px;
+    background-color: rgb(226, 35, 35);
+     border-radius: 20px;
+    position: absolute;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:  space-between;
+    gap: 20px;
+    box-shadow: inset 0 0 10px rgb(255,255,255,0.1),0 10px 20px rgba(0,0,0,0.5);
+    
+}
+.light{
+    width: 50px;
+    height: 100px;
+    background: rgb(27, 14, 14);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgb(red, green, blue);
+    transition: all 0.5s ease;
+    box-shadow: inset 0 5px 10px rgba(0,0,0,0.8);
+    
+    
+}
+.red{
+    background: red;
+    box-shadow: 0 0 20px red;
+} 
+.amber{
+    background-color: orange;
+    box-shadow: 0 0 20px orange;
+}
+.green{
+    background-color: rgb(64, 173, 64);
+    box-shadow: 0 0 200px green;
+}
+
+.controls{ 
+    position: 100px 150px;
+    bottom: 50px;
+    text-align: center;
+}
+button{
+    padding: 10px 10px;
+    margin: 0px;
+    border-radius: 5cap;
+    border-radius: 50px;
+    cursor: crosshair;
+    font-weight: bold;
+}
