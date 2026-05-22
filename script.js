@@ -1,30 +1,39 @@
-let interval;
+let simulationInterval = null;
 
-function clearLights {
-    document.getElementById('red').classList.remove('active');
-    document.getElementById('yellow').classList.remove('active');
-    document.getElementById('green').classList.remove('active');
-}
-function setLight(color){
-    clearLights();
-    document.getElementById(color)
-}
-function setLight(color){
-    clearLights();
-    document.getElementById(color).classList.add('active');
-}
-function startAuto(){
-    let sequence =[ 'red', 'green', 'yellow'];
-    let i = 0;
-
-    interval = setInterval(() => {
-        setLight(sequence[i]);
-        i = (i + 1) % sequence.length;
-    }, 2000);
+function activateLight(color) {
+  document.querySelectorAll('.light').forEach(light => {
+    light.classList.remove('active');
+  });
+  document.getElementById(color).classList.add('active');
 }
 
-function stopAuto(){
-    clearInterval(interval);
+function startSimulation() {
+  let sequence = ['red', 'green', 'yellow'];
+  let timings = { red: 3000, green: 3000, yellow: 1500 };
+  let index = 0;
+
+  function nextLight() {
+    let currentColor = sequence[index];
+    activateLight(currentColor);
+    setTimeout(() => {
+      index = (index + 1) % sequence.length;
+      nextLight();
+    }, timings[currentColor]);
+  }
+
+  nextLight();
 }
-startAuto();
+
+function toggleSimulation() {
+  if (simulationInterval) {
+    clearInterval(simulationInterval);
+    simulationInterval = null;
+    document.querySelectorAll('.light').forEach(light => {
+      light.classList.remove('active');
+    });
+  } else {
+    startSimulation();
+    simulationInterval = setInterval(() => {}, 10000);
+  }
+}
 

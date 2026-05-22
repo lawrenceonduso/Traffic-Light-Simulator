@@ -1,33 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRAFFIC LIGHT SIMULATOR</title>
-    <link rel="stylesheet" href="style.css"
+  <meta charset="UTF-8">
+  <title>Traffic Light Simulator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="traffic-light-container">
+    <div class="traffic-light">
+      <div id="red" class="light"></div>
+      <div id="yellow" class="light"></div>
+      <div id="green" class="light"></div>
+    </div>
+    <div class="pole"></div>
+  </div>
+  <button onclick="toggleSimulation()">Start OR Stop Simulation</button>
 
-
-    <div class="container">
-        <div class="traffic-light">
-            <div class="light red" id="red"></div>
-            <div class="light amber" id="yellow"></div>
-            <div class="light green" id="green"></div>
-        </div>
-
-        <div class="pole"></div>
-
-        <br>
-        
-        <button onclick="stopAuto()">start</button>
-        <button onclick="stopAuto()">stop</button>
-        <button onclick="setlight('red')">red</button>
-        <button onclick="setlight('amber')">yellow</button>
-        <button onclick="setlight('green')">green</button>
-        </div>
-        
-    </button>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
+
+
